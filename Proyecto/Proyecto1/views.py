@@ -1,15 +1,12 @@
 from django.http import HttpResponse
-
+from django.template import Template,Context
 def saludo(request):
-    pagina="""
-<HEAD>
-<TITLE>saludo</TITLE>
-</HEAD>
-<BODY>
-prueba saludo
-</BODY>
-</HTML>
-    """
+    doc_externo=open("Proyecto1/html/saludo.html")
+    plt=Template(doc_externo.read())
+    doc_externo.close()
+
+    ctx=Context()
+    pagina=plt.render(ctx)
     return HttpResponse(pagina)
 def despedida(request):
 
