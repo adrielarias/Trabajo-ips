@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+STATIC_URL='/static/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -26,8 +26,11 @@ SECRET_KEY = '-t9uke#!-iqm7r8p71)fcyt&c+*+x)hop@a0l(=iva3qm$fk^5'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
+import os
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+STATICFILES_DIRS = (
+  os.path.join(SITE_ROOT, 'static/'),
+)
 # Application definition
 
 INSTALLED_APPS = [
