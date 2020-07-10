@@ -25,7 +25,7 @@ SECRET_KEY = '-t9uke#!-iqm7r8p71)fcyt&c+*+x)hop@a0l(=iva3qm$fk^5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['proyecto-ips-282604.uc.r.appspot.com','127.0.0.1']
 import os
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 STATICFILES_DIRS = (
@@ -118,6 +118,8 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+# https://docs.djangoproject.com/en/2.1/howto/static-files/
+# Google App Engine: set static root for local static files
+# https://cloud.google.com/appengine/docs/flexible/python/serving-static-files
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
